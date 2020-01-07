@@ -25,9 +25,11 @@ USER root
 
 ENV PYTHONDONTWRITEBYTECODE yes
 
+RUN echo 7Server > /etc/yum/vars/releasever
+
 # install needed rpms - openvswitch must be 2.10.4 or higher
 # install selinux-policy first to avoid a race
-RUN yum-config-manager --disable rhel-fast-datapath && yum install -y  \
+RUN yum install -y  \
 	selinux-policy && \
 	yum clean all
 
