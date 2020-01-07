@@ -25,9 +25,11 @@ USER root
 
 ENV PYTHONDONTWRITEBYTECODE yes
 
+RUN subscription-manager repos --disable=rhel-fast-datapath
+
 # install needed rpms - openvswitch must be 2.10.4 or higher
 # install selinux-policy first to avoid a race
-RUN yum install -y --setopt=tsflags=nodocs --setopt=skip_missing_names_on_install=False \
+RUN yum install -y \
 	selinux-policy && \
 	yum clean all
 
