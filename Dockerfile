@@ -27,7 +27,7 @@ ENV PYTHONDONTWRITEBYTECODE yes
 
 # install needed rpms - openvswitch must be 2.10.4 or higher
 # install selinux-policy first to avoid a race
-RUN yum-config-manager --save --setopt=rhel-fast-datapath.skip_if_unavailable=true && yum install -y  \
+RUN yum-config-manager --disable rhel-fast-datapath && yum install -y  \
 	selinux-policy && \
 	yum clean all
 
