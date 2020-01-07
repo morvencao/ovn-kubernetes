@@ -25,8 +25,6 @@ USER root
 
 ENV PYTHONDONTWRITEBYTECODE yes
 
-RUN echo 7Server > /etc/yum/vars/releasever
-
 # install needed rpms - openvswitch must be 2.10.4 or higher
 # install selinux-policy first to avoid a race
 RUN yum install -y  \
