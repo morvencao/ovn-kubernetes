@@ -27,7 +27,7 @@ ENV PYTHONDONTWRITEBYTECODE yes
 
 # install needed rpms - openvswitch must be 2.10.4 or higher
 # install selinux-policy first to avoid a race
-RUN yum install -y  \
+RUN yum install -y --setopt=tsflags=nodocs --setopt=skip_missing_names_on_install=False \
 	selinux-policy && \
 	yum clean all
 
