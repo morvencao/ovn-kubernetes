@@ -25,7 +25,7 @@ USER root
 
 ENV PYTHONDONTWRITEBYTECODE yes
 
-RUN subscription-manager repos --disable=rhel-fast-datapath
+RUN yum --disablerepo=rhel-fast-datapath ...
 
 # install needed rpms - openvswitch must be 2.10.4 or higher
 # install selinux-policy first to avoid a race
